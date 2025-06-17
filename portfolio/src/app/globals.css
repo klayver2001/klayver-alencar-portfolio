@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f7fa;
+  --card: #fff;
+  --text-main: #1a202c;
+  --text-secondary: #64748b;
+  --accent: #6366f1;
+  --accent-2: #0ea5e9;
+  --border: #e5e7eb;
+  --shadow: 0 4px 24px 0 rgba(80, 112, 255, 0.07);
+  --radius: 1.2rem;
+  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+.dark {
+  --background: #181c24;
+  --card: #232837;
+  --text-main: #f5f7fa;
+  --text-secondary: #a0aec0;
+  --accent: #6366f1;
+  --accent-2: #0ea5e9;
+  --border: #232837;
+  --shadow: 0 4px 24px 0 rgba(80, 112, 255, 0.10);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--background);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background: var(--background);
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-family: var(--font-sans);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent-2);
+}
+
+button, .btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  box-shadow: 0 2px 8px 0 rgba(80, 112, 255, 0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  box-shadow: 0 4px 16px 0 rgba(80, 112, 255, 0.15);
+}
